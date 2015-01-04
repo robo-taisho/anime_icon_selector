@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+#ツイッターの一般ユーザーをお借りしましたが、特に他意はございません。
 
 user_name = ["Aliceremy023", "5Embody","n6cat","_07m", "nanasi59",]
 user_name.extend(["minicbm", "yu_mii_", "EYE_LOVE_PEACE", "bruno573"])
