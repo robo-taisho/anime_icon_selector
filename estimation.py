@@ -44,9 +44,8 @@ data_train = dense_list_make(user_name)
 
 label_train = username.label_train
 
-data_train_s, data_test_s, label_train_s, label_test_s = train_test_split(data_train, label_train, test_size=0.4)
+data_train_s, data_test_s, label_train_s, label_test_s,user_name_train,user_name_test = train_test_split(data_train, label_train,user_name, test_size=0.3)
 
-#label_test = [0,0,0,1,1,0,1,0,1]
 
 
 
@@ -73,13 +72,16 @@ print(label_tested)
 """
 
 #手動でテストしたいときはここの中身を使う
+
 """
 
-data_test_s = ['t_masahiro18','robo_taisho','7mochan']
+data_test_s = ['robo_taisho','ageh4c']
+user_name_test = data_test_s
 data_test_s = dense_list_make(data_test_s)
-label_test_s = [0,0,1]
+label_test_s = [0,1]
 #
 """
+
 
 label_predict = estimator.predict(data_test_s)
 label_predict2 = estimator.predict_proba(data_test_s)
@@ -117,11 +119,18 @@ for i in range(0,7528):
 
 """
 
+
 print("==== coef出力")
 print coef
 
-print("==== 予想するラベル")
+print("==== テストデータとなったユーザー名")
+print user_name_test
+
+print("==== 予想ラベル")
 print(label_predict)
+
+print("==== 正解ラベル")
+print(label_test_s)
 
 print("==== 各ラベルごとの確率")
 print(label_predict2)
